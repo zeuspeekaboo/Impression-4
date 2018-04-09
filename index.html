@@ -77,7 +77,7 @@
             imgSrc5= loadImage("image5.png");
             imgSrc6= loadImage("image6.png");
             
-            imgs = [imgSrc1, imgSrc1];
+            imgs = [imgSrc3, imgSrc3];
 		}
         
 		function setup() {
@@ -93,7 +93,7 @@
             loadBuffer(imgs[0]);
 			displayBuffer();
             
-            setInterval(function() { triggerFade() }, 20000);
+            setInterval(function() { triggerFade() }, 90000);
             setInterval(function() { switchEffects() } , 5000);
 			//image(imgDisplay, 0, 0);
 		}
@@ -102,15 +102,15 @@
             
                         background(0);
 			
-		  	var angle = random(.01);
+		  	var angle = random(.03);
 			if (state!=fadein) {
 		  	for(var i = 0 ; i < blocks.length ; i++){
 		  		//create a new vector pointing from the block origin to the current position
 		  		var newVector = new p5.Vector.sub(blocks[i].position, blocks[i].origin);
 		  		//rotate that vector by an arbitrary amount
-		  		newVector.rotate(angle+random(.03));
+		  		newVector.rotate(angle+random(.05));
 		  		//set the magnitude of the vector (speed of displacement)
-		  		newVector.setMag(3);
+		  		newVector.setMag(5);
 		  		//set the position to the newly rotated vector
 		  		blocks[i].position.set(p5.Vector.add(blocks[i].origin, newVector));
 		  		displaceBlock(blocks[i]);
