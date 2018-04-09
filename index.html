@@ -108,7 +108,7 @@
 		  		//create a new vector pointing from the block origin to the current position
 		  		var newVector = new p5.Vector.sub(blocks[i].position, blocks[i].origin);
 		  		//rotate that vector by an arbitrary amount
-		  		newVector.rotate(angle+random(.05));
+		  		newVector.rotate(angle+random(3));
 		  		//set the magnitude of the vector (speed of displacement)
 		  		newVector.setMag(5);
 		  		//set the position to the newly rotated vector
@@ -134,7 +134,7 @@
 			fill(0,alf);
 			rect(-width/2,-height/2,width,height);
 			alf -=5;
-				if (alf == 0) {
+				if (alf == 50) {
 					
 					state = showimage;
 				}
